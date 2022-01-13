@@ -1,11 +1,5 @@
-import { Module } from  '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
-import { AppController } from './app.controller';
-
-@Module({
-    controllers: [AppController]
-})
-class AppModule {}
+import { AppModule } from './app.module';
 
 async function boostrap() {
     const app = await NestFactory.create(AppModule);
