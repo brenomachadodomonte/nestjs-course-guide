@@ -8,4 +8,9 @@ export class AppController {
         return 'hi there!';
     }
 
+    @Get('/bye')
+    getByThere(){
+        return 'good bye';
+    }
+
 }
