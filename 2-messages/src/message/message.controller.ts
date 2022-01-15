@@ -12,4 +12,10 @@ export class MessageController {
     createMessage() {
         return { message: 'CREATE MESSAGE' }
     }
+
+    @Get('/:id')
+    getMessage(){
+        return { message: 'GET PARTICULAR MESSAGE' }
+    }
+
 }

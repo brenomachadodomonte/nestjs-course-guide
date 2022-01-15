@@ -11,3 +11,6 @@ content-type: application/json
 {
     "content": "hi there"
 }
+
+### Get a particular message
+GET {{host}}/message/10
