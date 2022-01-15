@@ -1,5 +1,13 @@
-### List all messages
 
 @host = http://localhost:3000
 
+### List all messages
 GET {{host}}/message
+
+### Create a new message
+POST {{host}}/message
+content-type: application/json
+
+{
+    "content": "hi there"
+}
