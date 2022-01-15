@@ -1,0 +1,5 @@
+### List all messages
+
+@host = http://localhost:3000
+
+GET {{host}}/message
