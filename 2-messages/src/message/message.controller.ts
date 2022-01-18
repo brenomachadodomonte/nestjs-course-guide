@@ -11,9 +11,9 @@ export class MessageController {
 
     @Post()
     createMessage(
-        @Body() body: CreateMessageDto,
+        @Body() createDto: CreateMessageDto,
     ) {
-        console.log(body);
+        console.log(createDto);
         return { message: 'CREATE MESSAGE' }
     }
 
