@@ -9,8 +9,8 @@ POST {{host}}/message
 content-type: application/json
 
 {
-    "content": "hi there"
+    "content": "goodbye!"
 }
 
 ### Get a particular message
-GET {{host}}/message/10
+GET {{host}}/message/885

@@ -6,6 +6,7 @@ export class MessageService {
     messagesRepo: MessageRepository;
 
     constructor() {
+        // Service is creating its own dependencies
         // Don't do this on real apps
         this.messagesRepo = new MessageRepository();
     }
@@ -19,6 +20,6 @@ export class MessageService {
     }
 
     create(message: string) {
-        return this.create(message);
+        return this.messagesRepo.create(message);
     }
 }
