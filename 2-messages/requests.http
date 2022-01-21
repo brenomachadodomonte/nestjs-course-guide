@@ -9,7 +9,7 @@ POST {{host}}/message
 content-type: application/json
 
 {
-    "content": "goodbye!"
+    "content": "another message!"
 }
 
 ### Get a particular message
