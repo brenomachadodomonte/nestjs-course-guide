@@ -4,6 +4,7 @@ import { CpuService } from './cpu.service';
 
 @Module({
   providers: [CpuService],
-  imports: [PowerModule]
+  imports: [PowerModule],
+  exports: [CpuService]
 })
 export class CpuModule {}
