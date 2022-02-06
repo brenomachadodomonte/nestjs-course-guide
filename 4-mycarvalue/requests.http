@@ -6,7 +6,7 @@ Content-Type: application/json
 
 {
     "email": "teste@email.com",
-    "password": "123456"
+    "password": "12345678"
 }
 
 ### Find a user with given id
@@ -24,3 +24,6 @@ Content-Type: application/json
 {
     "email": "breno@email.com"
 }
+
+### Delete a user
+DELETE {{host}}/user/2
