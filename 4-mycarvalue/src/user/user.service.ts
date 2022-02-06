@@ -19,5 +19,9 @@ export class UserService {
         return this.repo.save(user);
     }
 
+    findOne(id: number) {
+        return this.repo.findOneBy({ id });
+    }
+
 
 }

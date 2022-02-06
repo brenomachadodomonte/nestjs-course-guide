@@ -8,3 +8,7 @@ Content-Type: application/json
     "email": "teste@email.com",
     "password": "123456"
 }
+
+### Find a user with given id
+GET {{host}}/user/1
+Content-Type: application/json
