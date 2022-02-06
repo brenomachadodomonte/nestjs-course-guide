@@ -12,3 +12,8 @@ Content-Type: application/json
 ### Find a user with given id
 GET {{host}}/user/1
 Content-Type: application/json
+
+### Find all users by email
+GET {{host}}/user/?email=teste@email.com
+Content-Type: application/json
+
