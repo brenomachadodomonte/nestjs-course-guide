@@ -1,5 +1,6 @@
-import { Body, Controller, Get, NotFoundException, Param, Post, Query } from '@nestjs/common';
+import { Body, Controller, Get, NotFoundException, Param, Patch, Post, Query } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
+import { UpdateUserDto } from './dto/update-user.dto';
 import { User } from './user.entity';
 import { UserService } from './user.service';
 
@@ -33,6 +34,14 @@ export class UserController {
         @Query('email') email: string
     ) {
         return this.service.find(email);
+    }
+
+    @Patch('/:id')
+    updateUser(
+        @Param('id') id: number,
+        @Body() dto: UpdateUserDto
+    ) {
+        return this.service.update(id, dto);
     }
 
 }

@@ -17,3 +17,10 @@ Content-Type: application/json
 GET {{host}}/user/?email=teste@email.com
 Content-Type: application/json
 
+### Update user
+PATCH {{host}}/user/1
+Content-Type: application/json
+
+{
+    "email": "breno@email.com"
+}
