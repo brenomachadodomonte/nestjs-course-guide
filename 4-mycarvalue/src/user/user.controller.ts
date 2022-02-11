@@ -1,7 +1,6 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post, Query } from '@nestjs/common';
+import { Body, ClassSerializerInterceptor, Controller, Delete, Get, Param, Patch, Post, Query, UseInterceptors } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { User } from './user.entity';
 import { UserService } from './user.service';
 
 @Controller('user')
@@ -16,6 +15,7 @@ export class UserController {
         return this.service.create(body);
     }
 
+    @UseInterceptors(ClassSerializerInterceptor)
     @Get('/:id')
     findUser(
         @Param('id') id: number
