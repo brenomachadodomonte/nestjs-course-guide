@@ -1,4 +1,5 @@
 import { Body, ClassSerializerInterceptor, Controller, Delete, Get, Param, Patch, Post, Query, UseInterceptors } from '@nestjs/common';
+import { SerializeInterceptor } from 'src/interceptors/serialize.interceptor';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { UserService } from './user.service';
@@ -15,11 +16,12 @@ export class UserController {
         return this.service.create(body);
     }
 
-    @UseInterceptors(ClassSerializerInterceptor)
+    @UseInterceptors(SerializeInterceptor)
     @Get('/:id')
     findUser(
         @Param('id') id: number
     ) {
+        console.log('handler is runnig');
         return this.service.findOne(id);
     }
 
