@@ -27,7 +27,7 @@ export class AuthService {
         //join the hashed result and salt together
         const result = salt + '.' + hash.toString('hex');
         
-        const user = await this.userService.create({email, password});
+        const user = await this.userService.create({email, password: result});
 
         return user;
     }
