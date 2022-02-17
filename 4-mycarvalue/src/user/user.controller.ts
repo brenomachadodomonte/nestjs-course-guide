@@ -22,7 +22,6 @@ export class UserController {
     findUser(
         @Param('id') id: number
     ) {
-        console.log('handler is runnig');
         return this.service.findOne(id);
     }
 

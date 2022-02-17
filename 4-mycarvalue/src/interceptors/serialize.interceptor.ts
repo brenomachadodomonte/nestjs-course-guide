@@ -1,5 +1,5 @@
 import { CallHandler, ExecutionContext, NestInterceptor, UseInterceptors } from "@nestjs/common";
-import { plainToClass } from "class-transformer";
+import { plainToInstance } from "class-transformer";
 import { map, Observable } from "rxjs";
 
 interface ClassConstructor {
@@ -21,7 +21,7 @@ export class SerializeInterceptor implements NestInterceptor {
         return next.handle().pipe(
             map((data: any) => {
                 // Run something before the response is sent out
-                return plainToClass(this.dto, data, {
+                return plainToInstance(this.dto, data, {
                     excludeExtraneousValues: true
                 })
             })
