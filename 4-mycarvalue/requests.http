@@ -36,3 +36,10 @@ Content-Type: application/json
 
 ### Delete a user
 DELETE {{host}}/user/2
+
+### Set color
+GET {{host}}/user/colors/white
+
+### Get color
+GET {{host}}/user/colors/
+

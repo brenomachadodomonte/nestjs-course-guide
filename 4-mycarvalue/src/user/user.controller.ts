@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post, Query } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post, Query, Session } from '@nestjs/common';
 import { Serialize } from 'src/interceptors/serialize.interceptor';
 import { AuthService } from './auth.service';
 import { CreateUserDto } from './dto/create-user.dto';
@@ -11,6 +11,16 @@ import { UserService } from './user.service';
 export class UserController {
 
     constructor(private service: UserService, private authService: AuthService){}
+
+    @Get('/colors/:color')
+    setColor(@Param('color') color: string, @Session() session: any) {
+        session.color = color;
+    }
+
+    @Get('/colors')
+    getColor(@Session() session: any) {
+        return session.color;
+    }
 
     @Post('/signup')
     createUser(
