@@ -9,6 +9,15 @@ Content-Type: application/json
     "password": "12345678"
 }
 
+### Login
+POST {{host}}/user/signin
+Content-Type: application/json
+
+{
+    "email": "machado@email.com",
+    "password": "12345678"
+}
+
 ### Find a user with given id
 GET {{host}}/user/1
 Content-Type: application/json
