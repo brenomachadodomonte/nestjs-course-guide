@@ -44,6 +44,11 @@ export class UserController {
         return user;
     }
 
+    @Get('/whoami')
+    whoami(@Session() session: any) {
+        return this.service.findOne(session.userId);
+    }
+
     @Get('/:id')
     findUser(
         @Param('id') id: number
