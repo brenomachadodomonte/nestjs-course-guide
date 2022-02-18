@@ -22,6 +22,10 @@ Content-Type: application/json
 GET {{host}}/user/whoami
 Content-Type: application/json
 
+### Get the currently signed in user
+POST {{host}}/user/signout
+Content-Type: application/json
+
 ### Find a user with given id
 GET {{host}}/user/1
 Content-Type: application/json
